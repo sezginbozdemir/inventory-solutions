@@ -21,6 +21,7 @@ const AddCustomerModal: React.FC<AddCustomerModalProps> = ({
     company: "",
     adress: "",
     phone: "",
+    createdAt: new Date(),
     _id: "",
   });
 
@@ -71,6 +72,7 @@ const AddCustomerModal: React.FC<AddCustomerModalProps> = ({
       company: "",
       adress: "",
       phone: "",
+      createdAt: new Date(),
       _id: "",
     });
   };

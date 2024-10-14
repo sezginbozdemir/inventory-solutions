@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, ScrollArea, Paper } from "@mantine/core";
+import { Table, ScrollArea } from "@mantine/core";
 import { useAppSelector } from "../../store/store";
 
 const RecentCustomers: React.FC = () => {

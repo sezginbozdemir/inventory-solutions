@@ -1,5 +1,5 @@
 import React from "react";
-import { AppShell, useMantineColorScheme, Text, Title } from "@mantine/core";
+import { AppShell, useMantineColorScheme, Title } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import SideBar from "./sideBar";
 import Header from "./header";

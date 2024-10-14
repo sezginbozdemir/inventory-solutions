@@ -41,7 +41,7 @@ const useOrderTable = () => {
         customerId: orderToUpdate.customerId!,
         products: orderToUpdate.products || [],
         orderId: orderToUpdate.orderId || "",
-        orderDate: orderToUpdate.orderDate || new Date(),
+        orderDate: orderToUpdate.orderDate || new Date().toLocaleDateString(),
       };
 
       const result = await dispatch(

@@ -2,17 +2,25 @@ import React, { useEffect } from "react";
 import { Box, Text, Progress, ScrollArea } from "@mantine/core";
 import { useAppSelector, useAppDispatch } from "../../store/store";
 import { fetchOrders } from "../../store/features/OrderSlice";
+import { Customer } from "../../api/useCustomerApi";
+import { Order } from "../../api/useOrderApi";
+
+interface OrderCount {
+  [key: string]: number; // Index signature for dynamic customer IDs
+}
 
 const TopClientsChart: React.FC = () => {
-  const customers = useAppSelector((state) => state.customers.customers);
-  const orders = useAppSelector((state) => state.orders.orders);
+  const customers: Customer[] = useAppSelector(
+    (state) => state.customers.customers
+  );
+  const orders: Order[] = useAppSelector((state) => state.orders.orders);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchOrders());
   }, [dispatch]);
 
-  const orderCounts = orders.reduce((acc, order) => {
+  const orderCounts: OrderCount = orders.reduce<OrderCount>((acc, order) => {
     const { customerId } = order;
     if (!acc[customerId._id]) {
       acc[customerId._id] = 0;

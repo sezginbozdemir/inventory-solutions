@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import useEmployeeApi, { Employee } from "../../api/useEmployeeApi";
 
-const { login, signUp, deleteEmployee, updateEmployee, getEmployees } =
+const { signUp, deleteEmployee, updateEmployee, getEmployees } =
   useEmployeeApi();
 
 interface EmployeeState {

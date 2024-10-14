@@ -7,7 +7,6 @@ import {
   PasswordInput,
   Button,
   Paper,
-  Title,
   Box,
   Anchor,
 } from "@mantine/core";

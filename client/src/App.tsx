@@ -1,5 +1,4 @@
 import "./App.css";
-import React, { useEffect } from "react";
 import CustomersPage from "./pages/CustomersPage";
 import ProductsPage from "./pages/ProductsPage";
 import OrdersPage from "./pages/OrdersPage";

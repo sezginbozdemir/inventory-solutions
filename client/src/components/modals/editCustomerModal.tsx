@@ -23,6 +23,7 @@ const EditCustomerModal: React.FC<EditCustomerModalProps> = ({
     company: "",
     adress: "",
     phone: "",
+    createdAt: new Date(),
     _id: "",
   });
 

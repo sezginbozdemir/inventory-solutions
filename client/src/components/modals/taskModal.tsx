@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Button,
   Modal,
@@ -120,7 +120,7 @@ const TaskModal: React.FC<TaskModalProps> = ({ opened, onClose }) => {
               </Table.Tr>
             </Table.Thead>
             <Table.Tbody>
-              {taskList.map((item, index) => (
+              {taskList.map((item) => (
                 <Table.Tr key={item.description}>
                   <Table.Td>
                     <BiTask size={20} />
