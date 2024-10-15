@@ -18,7 +18,7 @@ const useOrderApi = () => {
   const createOrder = async (order: Order): Promise<Order | null> => {
     try {
       const response = await axios.post<Order>(
-        "http://localhost:8000/api/orders",
+        import.meta.env.VITE_ORDERS_ROUTE!,
         order
       );
       return response.data;

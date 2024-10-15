@@ -15,7 +15,7 @@ const OrderTotal: React.FC = () => {
   } = useFilteredWidgets();
 
   return (
-    <Paper className="h-48 w-1/6 flex flex-col rounded place-content-center items-center p-4">
+    <Paper className="h-60 w-1/6 flex flex-col rounded justify-between items-center p-2">
       <Group className="flex justify-between w-full">
         <Select
           label="Year"

@@ -11,7 +11,7 @@ const TotalBudget: React.FC = () => {
     return total + salePrice * inStock;
   }, 0);
   return (
-    <Paper className="h-48 w-1/6 flex flex-col rounded place-content-center items-center p-4">
+    <Paper className="h-60 w-1/6 flex flex-col rounded place-content-center items-center p-4">
       <TfiMoney size={40} color="var(--mantine-color-blue-filled)" />
 
       <Text c="dimmed">Total Budget</Text>
