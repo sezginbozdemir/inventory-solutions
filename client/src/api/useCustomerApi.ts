@@ -15,7 +15,7 @@ const useCustomerApi = () => {
   ): Promise<Customer | null> => {
     try {
       const response = await axios.post<Customer>(
-        import.meta.env.VITE_CUSTOMERS_ROUTE!,
+        `${import.meta.env.VITE_API_ROUTE}/customers`,
         customer
       );
       return response.data;
@@ -28,7 +28,7 @@ const useCustomerApi = () => {
   const getCustomers = async (): Promise<Customer[]> => {
     try {
       const response = await axios.get<Customer[]>(
-        import.meta.env.VITE_CUSTOMERS_ROUTE!
+        `${import.meta.env.VITE_API_ROUTE}/customers`
       );
       return response.data;
     } catch (error: any) {
@@ -43,7 +43,7 @@ const useCustomerApi = () => {
   ): Promise<Customer | null> => {
     try {
       const response = await axios.put<Customer>(
-        `${import.meta.env.VITE_CUSTOMERS_ROUTE!}/${id}`,
+        `${import.meta.env.VITE_API_ROUTE}/customers/${id}`,
         updatedCustomer
       );
       return response.data;
@@ -56,7 +56,7 @@ const useCustomerApi = () => {
   const deleteCustomer = async (id: string) => {
     try {
       const response = await axios.delete<void>(
-        `${import.meta.env.VITE_CUSTOMERS_ROUTE!}/${id}`
+        `${import.meta.env.VITE_API_ROUTE}/customers/${id}`
       );
       return response.status === 204;
     } catch (error: any) {

@@ -20,7 +20,7 @@ const useEmployeeApi = () => {
   const signUp = async (employee: Employee): Promise<Employee | null> => {
     try {
       const response = await axios.post<Employee>(
-        `${import.meta.env.VITE_EMPLOYEE_ROUTE!}/signup`,
+        `${import.meta.env.VITE_API_ROUTE}/employee/signup`,
         employee
       );
       return response.data;
@@ -45,7 +45,10 @@ const useEmployeeApi = () => {
         active: string;
         name: string;
         role: string;
-      }>(`${import.meta.env.VITE_EMPLOYEE_ROUTE!}/login`, { email, password });
+      }>(`${import.meta.env.VITE_API_ROUTE}/employee/login`, {
+        email,
+        password,
+      });
       return {
         token: response.data.token,
         active: response.data.active,
@@ -66,7 +69,7 @@ const useEmployeeApi = () => {
   const getEmployees = async (): Promise<Employee[]> => {
     try {
       const response = await axios.get<Employee[]>(
-        `${import.meta.env.VITE_EMPLOYEE_ROUTE!}`
+        `${import.meta.env.VITE_API_ROUTE}/employee`
       );
       return response.data;
     } catch (error: any) {
@@ -81,7 +84,7 @@ const useEmployeeApi = () => {
   ): Promise<Employee | null> => {
     try {
       const response = await axios.put<Employee>(
-        `${import.meta.env.VITE_EMPLOYEE_ROUTE!}/${id}`,
+        `${import.meta.env.VITE_API_ROUTE}/employee/${id}`,
         updatedEmployee
       );
       return response.data;
@@ -94,7 +97,7 @@ const useEmployeeApi = () => {
   const deleteEmployee = async (id: string) => {
     try {
       const response = await axios.delete<void>(
-        `${import.meta.env.VITE_EMPLOYEE_ROUTE!}/${id}`
+        `${import.meta.env.VITE_API_ROUTE}/employee/${id}`
       );
       return response.status === 200;
     } catch (error: any) {

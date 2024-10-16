@@ -18,7 +18,7 @@ const useOrderApi = () => {
   const createOrder = async (order: Order): Promise<Order | null> => {
     try {
       const response = await axios.post<Order>(
-        import.meta.env.VITE_ORDERS_ROUTE!,
+        `${import.meta.env.VITE_API_ROUTE}/orders`,
         order
       );
       return response.data;
@@ -31,7 +31,7 @@ const useOrderApi = () => {
   const getOrders = async (): Promise<Order[]> => {
     try {
       const response = await axios.get<Order[]>(
-        import.meta.env.VITE_ORDERS_ROUTE!
+        `${import.meta.env.VITE_API_ROUTE}/orders`
       );
       return response.data;
     } catch (error: any) {
@@ -46,7 +46,7 @@ const useOrderApi = () => {
   ): Promise<Order | null> => {
     try {
       const response = await axios.put<Order>(
-        `${import.meta.env.VITE_ORDERS_ROUTE!}/${id}`,
+        `${import.meta.env.VITE_API_ROUTE}/orders/${id}`,
         updatedOrder
       );
       return response.data;
@@ -59,7 +59,7 @@ const useOrderApi = () => {
   const deleteOrder = async (id: string) => {
     try {
       const response = await axios.delete<void>(
-        `${import.meta.env.VITE_ORDERS_ROUTE!}/${id}`
+        `${import.meta.env.VITE_API_ROUTE}/orders/${id}`
       );
       return response.status === 200;
     } catch (error: any) {

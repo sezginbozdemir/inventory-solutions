@@ -9,11 +9,10 @@ export interface Product {
 }
 
 const useProductApi = () => {
-  //Create product hook
   const createProduct = async (product: Product): Promise<Product | null> => {
     try {
       const response = await axios.post<Product>(
-        import.meta.env.VITE_PRODUCTS_ROUTE!,
+        `${import.meta.env.VITE_API_ROUTE}/products`,
         product
       );
       return response.data;
@@ -23,12 +22,10 @@ const useProductApi = () => {
     }
   };
 
-  // Get products hook
-
   const getProducts = async (): Promise<Product[]> => {
     try {
       const response = await axios.get<Product[]>(
-        import.meta.env.VITE_PRODUCTS_ROUTE!
+        `${import.meta.env.VITE_API_ROUTE}/products`
       );
       return response.data;
     } catch (error: any) {
@@ -37,15 +34,13 @@ const useProductApi = () => {
     }
   };
 
-  // Update Product hook
-
   const updateProduct = async (
     id: string,
     updatedProduct: Product
   ): Promise<Product | null> => {
     try {
       const response = await axios.put<Product>(
-        `${import.meta.env.VITE_PRODUCTS_ROUTE!}/${id}`,
+        `${import.meta.env.VITE_API_ROUTE}/products/${id}`,
         updatedProduct
       );
       return response.data;
@@ -55,12 +50,10 @@ const useProductApi = () => {
     }
   };
 
-  // Delete product hook
-
   const deleteProduct = async (id: string) => {
     try {
       const response = await axios.delete<void>(
-        `${import.meta.env.VITE_PRODUCTS_ROUTE!}/${id}`
+        `${import.meta.env.VITE_API_ROUTE}/products/${id}`
       );
       return response.status === 204;
     } catch (error: any) {
