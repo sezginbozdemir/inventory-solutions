@@ -8,6 +8,14 @@ This is a full-stack inventory management application built with the following t
 - **Database:** MongoDB
 - **Authentication:** JWT (JSON Web Token)
 
+\*\*Live Demo: https://d3tizr1jp8wpvj.cloudfront.net/
+
+##Screenshots
+
+![Dashboard](./screenshots/dashboard1.png)
+
+![Product Table](./screenshots/table1.png)
+
 ## Features
 
 - Manage product and customer lists
