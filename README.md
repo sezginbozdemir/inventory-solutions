@@ -1,4 +1,8 @@
 # Inventory Management Application
+Live Demo: https://inventory.sezdev.com/
+Credentials:
+Email: admin
+Password: admin
 
 This is a full-stack inventory management application built with the following technologies:
 
